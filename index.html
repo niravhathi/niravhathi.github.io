@@ -247,25 +247,26 @@
 					<section class="wrapper style1 align-center">
 						<div class="inner medium">
 							<h2>Get in touch</h2>
-							<form method="post" action="#">
+							<form method="post" name="gform" id="gform" enctype="text/plain" action="https://docs.google.com/forms/d/e/1FAIpQLScBKnU4-5eN0NsmfI0kgk0hG_sr8jMW33mSIjANfRDDpbUz8g/formResponse?" target="hidden_iframe" onsubmit="submitted=true;">
 								<div class="fields">
 									<div class="field half">
 										<label for="name">Name</label>
-										<input type="text" name="name" id="name" value="" />
+										<input type="text" name="entry.203922889" id="entry.203922889" value="" />
 									</div>
 									<div class="field half">
 										<label for="email">Email</label>
-										<input type="email" name="email" id="email" value="" />
+										<input type="email" name="entry.1844258615" id="entry.1844258615" value="" />
 									</div>
 									<div class="field">
 										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="6"></textarea>
+										<textarea name="entry.1000974849" id="entry.1000974849" rows="6"></textarea>
 									</div>
 								</div>
 								<ul class="actions special">
 									<li><input type="submit" name="submit" id="submit" value="Send Message" /></li>
 								</ul>
 							</form>
+							<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
 
 						</div>
 					</section>
@@ -294,6 +295,14 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/jquery.min.js"></script>
+			<script type="text/javascript">var submitted=false;</script>
+			<script type="text/javascript">
+				$('#gform').on('submit', function(e) {
+  				$('#gform *').fadeOut(2000);
+  				$('#gform').prepend('Your submission has been processed...');
+  			});
+			</script>
 
 	</body>
 </html>
